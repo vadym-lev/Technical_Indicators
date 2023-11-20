@@ -88,7 +88,7 @@ async def main(
 
         commodites_data = await asyncio.gather(*tasks)
 
-        with open("symbols_data.json", "w") as f:
+        with open(f"symbols_data_{start_date}_{end_date}.json", "w") as f:
 
             json.dump({key: d[key] for d in commodites_data for key in d}, f)
 
